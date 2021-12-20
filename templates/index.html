@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bike</title>
+    <style>
+        body ,html{
+          background-image:url({{url_for('static',filename='1.jpg')}});
+          background-size: 100% 100%; background-repeat: no-repeat; height: 100%;
+        }
+        table, th, td { color: yellowgreen; background-color: darkcyan;
+                border:1px solid pink;
+            }
+    </style>
+    
+</head>
+    <body>
+        <h1 style="color: whitesmoke; background-color: darkcyan; text-align: center;">Bike Demand Prediction</h1>
+        {% if result %}
+            <h1 style="text-align: center; color: gold; box-sizing: content-box; ">{{ result }}</h1>
+        {% endif %}
+        <form method="post" action="/predict">
+            <table style="width:100%;" >
+                <tr>
+                    <th class="header-label">Hour</th>
+                    <th class="header-label">Temperature(°C)</th>
+                    <th class="header-label">Humidity(%)</th>
+                    <th class="header-label">Wind speed (m/s)</th>
+                    <th class="header-label">Visibility (10m)</th>
+                    
+                  </tr>
+                  <tr>
+                    <th><input type="number" value= "12" name="hour"></th>
+                    <th><input type="number" value="-5.2" name="temp"></th>
+                    <th><input type="number" value="37" name="humi"></th>
+                    <th><input type="number" value="2.2" name="wind"></th>
+                    <th><input type="number" value="2000" name="visi"></th>
+                </tr>
+                <br><br>
+                <tr>
+                    <th class="header-label">Dew point temperature(°C)</th>
+                    <th class="header-label">Solar Radiation (MJ/m2)</th>
+                    <th class="header-label">Rainfall(mm)</th>
+                    <th class="header-label">Snowfall (cm)</th>
+                    <th class="header-label">Seasons</th>
+                </tr>
+                <tr>
+                    <th><input type="number" value= "-17.6" name="dew"></th>
+                    <th><input type="number" value="0.0" name="solar"></th>
+                    <th><input type="number" value="0.0" name="rain"></th>
+                    <th><input type="number" value="0.0" name="snow"></th>
+                    <th><select name="season" id="season">
+                        <option value=Winter id="season">Winter</option>
+                        <option value=Summer id="season">Summer</option>
+                        <option value=Spring id="season">Spring</option>
+                        <option value=Autumn id="season">Autumn</option>
+                    </select></th>
+                </tr>
+                <br><br>
+                <tr>
+                    <th class="header-label">Holiday</th>
+                    <th class="header-label">Functioning Day</th>
+                    <th class="header-label">Month</th>
+                    <th class="header-label">year</th>
+                    <th class="header-label">Week</th>
+                </tr>
+                <tr>
+                    <th><select name="holi" id="holi">
+                        <option value="No Holiday" id="holi">No Holiday</option>
+                        <option value="Holiday" id="holi">Holiday</option>
+                    </select></th>
+                    <th><select name="func" id="func">
+                        <option value="Yes" id="func">Yes</option>
+                        <option value="No" id="func">No</option>
+                    </select></th>
+                    <th><select name="month" id="month">
+                        <option value="January" id="month">January</option>
+                        <option value="February" id="month">February</option>
+                        <option value="March" id="month">March</option>
+                        <option value="April" id="month">April</option>
+                        <option value="May" id="month">May</option>
+                        <option value="June" id="month">June</option>
+                        <option value="July" id="month">July</option>
+                        <option value="August" id="month">August</option>
+                        <option value="September" id="month">September</option>
+                        <option value="October" id="month">October</option>
+                        <option value="November" id="month">November</option>
+                        <option value="December" id="month">December</option>
+                    </select></th>
+                    <th><input type="number" value="2021" name="year"></th>
+                    <th><select name="week" id="week">
+                        <option value="weekend" id="week">Weekend</option>
+                        <option value="weekday" id="week">Weekday</option>
+                    </select></th>
+
+                </tr>
+            </table>
+            <br>
+            <br>
+            <h1 style="text-align: center;"><input type="submit" style="text-align: center;font-face: 'Comic Sans MS'; font-size: larger; color: pink; background-color: chocolate; border: 3pt ridge lightgrey" value=" Predict"></h1>
+            
+        </form>
+    </body>
