@@ -17,7 +17,7 @@
     <body>
         <h1 style="color: whitesmoke; background-color: darkcyan; text-align: center;">Bike Demand Prediction</h1>
         {% if result %}
-            <h1 style="text-align: center; color: gold; box-sizing: content-box; ">{{ result }}</h1>
+            <h1 style="text-align: center; color: gold;">{{ result }}</h1>
         {% endif %}
         <form method="post" action="/predict">
             <table style="width:100%;" >
@@ -97,7 +97,7 @@
             </table>
             <br>
             <br>
-            <h1 style="text-align: center;"><input type="submit" style="text-align: center;font-face: 'Comic Sans MS'; font-size: larger; color: pink; background-color: chocolate; border: 3pt ridge lightgrey" value=" Predict"></h1>
+            <h1 style="text-align: center;"><input type="submit" style="text-align: center; font-size: larger; color: red; background-color: lightyellow; border: 3pt ridge darkcyan" value="Predict"></h1>
             
         </form>
     </body>
