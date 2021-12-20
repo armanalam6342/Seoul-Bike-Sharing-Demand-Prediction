@@ -23,14 +23,14 @@ def predict():
     snow = float(request.form.get('snow'))
     season = str(request.form.get('season'))
     holi = str(request.form.get('holi'))
-    func = str(request.form.get('func'))
+    #func = str(request.form.get('func'))
     month = str(request.form.get('month'))
     year = str(request.form.get('year'))
     week =  str(request.form.get('week'))
 
     
 
-    list_column = [hour,temp,humi,wind,visi,dew,solar,rain,snow,season,holi,func,month,year,week]
+    list_column = [hour,temp,humi,wind,visi,dew,solar,rain,snow,season,holi,'Yes',month,year,week]
     data =pd.DataFrame(np.array([list_column]),columns=['Hour', 'Temperature(°C)', 'Humidity(%)', 'Wind speed (m/s)',
        'Visibility (10m)', 'Dew point temperature(°C)',
        'Solar Radiation (MJ/m2)', 'Rainfall(mm)', 'Snowfall (cm)', 'Seasons',

@@ -8,8 +8,8 @@
           background-image:url({{url_for('static',filename='1.jpg')}});
           background-size: 100% 100%; background-repeat: no-repeat; height: 100%;
         }
-        table, th, td { color: yellowgreen; background-color: darkcyan;
-                border:1px solid pink;
+        table, th, td { color: yellowgreen; background-color:darkcyan;
+                border:1px dashed pink;
             }
     </style>
     
@@ -20,7 +20,7 @@
             <h1 style="text-align: center; color: gold;">{{ result }}</h1>
         {% endif %}
         <form method="post" action="/predict">
-            <table style="width:100%;" >
+            <table style="width:100%; border-style: dashed; text-align: center;" >
                 <tr>
                     <th class="header-label">Hour</th>
                     <th class="header-label">Temperature(°C)</th>
@@ -57,9 +57,9 @@
                     </select></th>
                 </tr>
                 <br><br>
-                <tr>
+                <tr >
                     <th class="header-label">Holiday</th>
-                    <th class="header-label">Functioning Day</th>
+                    <!--<th class="header-label">Functioning Day</th>-->
                     <th class="header-label">Month</th>
                     <th class="header-label">year</th>
                     <th class="header-label">Week</th>
@@ -69,10 +69,10 @@
                         <option value="No Holiday" id="holi">No Holiday</option>
                         <option value="Holiday" id="holi">Holiday</option>
                     </select></th>
-                    <th><select name="func" id="func">
+                    <!--<th><select name="func" id="func">
                         <option value="Yes" id="func">Yes</option>
                         <option value="No" id="func">No</option>
-                    </select></th>
+                    </select></th> -->
                     <th><select name="month" id="month">
                         <option value="January" id="month">January</option>
                         <option value="February" id="month">February</option>
